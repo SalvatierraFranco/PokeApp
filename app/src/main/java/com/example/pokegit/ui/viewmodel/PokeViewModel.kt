@@ -1,4 +1,4 @@
-package com.example.pokegit.viewmodel
+package com.example.pokegit.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 

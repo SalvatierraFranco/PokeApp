@@ -1,4 +1,4 @@
-package com.example.pokegit.model
+package com.example.pokegit.data.model
 
 class PokeProvider {
     companion object{

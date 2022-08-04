@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeGit">
         <activity
-            android:name=".view.SplashActivity"
+            android:name="com.example.pokegit.ui.view.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.example.pokegit.ui.view.MainActivity"
             android:exported="true">
         </activity>
     </application>

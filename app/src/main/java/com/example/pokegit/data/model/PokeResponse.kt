@@ -1,4 +1,4 @@
-package com.example.pokegit.model
+package com.example.pokegit.data.model
 
 data class PokeResponse(
     var count: Int,

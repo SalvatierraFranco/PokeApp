@@ -1,4 +1,4 @@
-package com.example.pokegit.view
+package com.example.pokegit.ui.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
