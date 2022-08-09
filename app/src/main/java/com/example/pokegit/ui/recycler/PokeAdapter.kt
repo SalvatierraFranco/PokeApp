@@ -18,4 +18,9 @@ class PokeAdapter(var pokeList: List<Pokemon>): RecyclerView.Adapter<PokeViewHol
     }
 
     override fun getItemCount(): Int = pokeList.size
+
+    fun addPokemon(list: List<Pokemon>){
+        pokeList = list
+        notifyDataSetChanged()
+    }
 }
