@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.PokeInfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/colorBackCard"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="40dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Charizard"
+            android:layout_gravity="center_horizontal"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/ivPokePic"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/tvType1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Type1"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="55dp"/>
+
+        <TextView
+            android:id="@+id/tvType2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Type2"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="70dp"/>
+
+        <TextView
+            android:id="@+id/tvType3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Type3"
+            android:layout_marginTop="70dp"/>
+
+        <TextView
+            android:id="@+id/tvHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="20m (Altura)"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="100kg (Peso)"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="230dp"
+            android:textSize="20dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estadísticas"
+        app:layout_constraintTop_toBottomOf="@id/colorBackCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <!--HP-->
+
+    <ProgressBar
+        android:id="@+id/progressHP"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:indeterminateOnly="false"
+        tools:progress="40"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/progressAttack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.47"/>
+
+    <TextView
+        android:id="@+id/tvHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressHP"
+        app:layout_constraintEnd_toEndOf="@+id/progressHP"
+        app:layout_constraintStart_toStartOf="@+id/progressHP"
+        app:layout_constraintTop_toTopOf="@+id/progressHP"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/tvVida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIDA"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progressHP"
+        app:layout_constraintBottom_toTopOf="@id/progressDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"/>
+
+    <!--Attack-->
+
+    <ProgressBar
+        android:id="@+id/progressAttack"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:indeterminateOnly="false"
+        tools:progress="40"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressHP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/tvAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressAttack"
+        app:layout_constraintEnd_toEndOf="@+id/progressAttack"
+        app:layout_constraintStart_toStartOf="@+id/progressAttack"
+        app:layout_constraintTop_toTopOf="@+id/progressAttack"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/tvAtt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ATAQUE"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progressAttack"
+        app:layout_constraintBottom_toTopOf="@id/progressSpecialAttack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"/>
+
+    <!--Defense-->
+
+    <ProgressBar
+        android:id="@+id/progressDefense"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:indeterminateOnly="false"
+        tools:progress="40"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/progressHP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/progressSpecialAttack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/tvDefense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressDefense"
+        app:layout_constraintEnd_toEndOf="@+id/progressDefense"
+        app:layout_constraintStart_toStartOf="@+id/progressDefense"
+        app:layout_constraintTop_toTopOf="@+id/progressDefense"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/tvDef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEFENSA"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progressDefense"
+        app:layout_constraintBottom_toTopOf="@id/progressSpecialDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"/>
+
+    <!--Special Attack-->
+
+    <ProgressBar
+        android:id="@+id/progressSpecialAttack"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:indeterminateOnly="false"
+        tools:progress="40"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/progressAttack"
+        app:layout_constraintStart_toEndOf="@id/progressDefense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/tvSpecialAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressSpecialAttack"
+        app:layout_constraintEnd_toEndOf="@+id/progressSpecialAttack"
+        app:layout_constraintStart_toStartOf="@+id/progressSpecialAttack"
+        app:layout_constraintTop_toTopOf="@+id/progressSpecialAttack"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/tvSpAtt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AT. ESPECIAL"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progressSpecialAttack"
+        app:layout_constraintBottom_toTopOf="@id/progressSpeed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"/>
+
+    <!--Special Defense-->
+
+    <ProgressBar
+        android:id="@+id/progressSpecialDefense"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:indeterminateOnly="false"
+        tools:progress="40"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/progressDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/progressSpeed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tvSpecialDefense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressSpecialDefense"
+        app:layout_constraintEnd_toEndOf="@+id/progressSpecialDefense"
+        app:layout_constraintStart_toStartOf="@+id/progressSpecialDefense"
+        app:layout_constraintTop_toTopOf="@+id/progressSpecialDefense"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/tvSpDef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEF. ESPECIAL"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progressSpecialDefense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"/>
+
+    <!--Speed-->
+
+    <ProgressBar
+        android:id="@+id/progressSpeed"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:indeterminateOnly="false"
+        tools:progress="40"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/progressSpecialAttack"
+        app:layout_constraintStart_toEndOf="@id/progressSpecialDefense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressSpeed"
+        app:layout_constraintEnd_toEndOf="@+id/progressSpeed"
+        app:layout_constraintStart_toStartOf="@+id/progressSpeed"
+        app:layout_constraintTop_toTopOf="@+id/progressSpeed"
+        tools:text="60%" />
+
+    <TextView
+        android:id="@+id/tvSp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VELOCIDAD"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progressSpeed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

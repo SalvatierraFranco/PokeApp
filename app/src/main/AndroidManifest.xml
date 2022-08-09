@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeGit">
+        <activity android:name=".ui.view.PokeInfoActivity"></activity>
         <activity
-            android:name="com.example.pokegit.ui.view.SplashActivity"
+            android:name=".ui.view.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -22,9 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pokegit.ui.view.MainActivity"
-            android:exported="true">
-        </activity>
+            android:name=".ui.view.MainActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
