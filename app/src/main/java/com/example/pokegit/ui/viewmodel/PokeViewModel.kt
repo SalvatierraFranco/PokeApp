@@ -22,4 +22,14 @@ class PokeViewModel: ViewModel() {
             }
         }
     }
+
+    fun onCreateMore(offset: Int, limit: Int){
+        viewModelScope.launch {
+            var response = getPokemonsUseCase.getPokeMore(offset, limit)
+
+            if(!response.isNullOrEmpty()){
+                pokeLiveData.postValue(response!!)
+            }
+        }
+    }
 }

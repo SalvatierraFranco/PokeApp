@@ -16,4 +16,11 @@ class PokeService {
             response.body()
         }
     }
+
+    suspend fun getPokeMore(offset: Int, limit: Int): PokeResponse? {
+        return withContext(Dispatchers.IO){
+            var response = retrofit.create(PokeApiClient::class.java).getPokeMore(offset, limit)
+            response.body()
+        }
+    }
 }

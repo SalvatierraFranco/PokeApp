@@ -13,4 +13,14 @@ class PokeRepository {
         }
         return response!!.results
     }
+
+    suspend fun getPokeMore(offset: Int, limit: Int): List<Pokemon>?{
+        var response = PokeService().getPokeMore(offset, limit)
+
+        if(response != null){
+            PokeProvider.pokemonList = response.results
+        }
+
+        return response!!.results
+    }
 }

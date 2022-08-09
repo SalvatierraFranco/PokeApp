@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pokeAdapter: PokeAdapter
     private lateinit var layoutManager: LinearLayoutManager
 
+    private var offset = 0
+    private var limit = 20
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,6 +37,14 @@ class MainActivity : AppCompatActivity() {
         })
 
         initUI()
+        setButtonLoad()
+    }
+
+    private fun setButtonLoad() {
+        binding.btnLoad.setOnClickListener {
+            limit += 20
+            pokeViewModel.onCreateMore(offset, limit)
+        }
     }
 
     private fun initUI() {
