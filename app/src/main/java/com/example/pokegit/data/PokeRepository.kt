@@ -1,5 +1,6 @@
 package com.example.pokegit.data
 
+import com.example.pokegit.data.model.PokeInfo
 import com.example.pokegit.data.model.PokeProvider
 import com.example.pokegit.data.model.Pokemon
 import com.example.pokegit.data.network.PokeService
@@ -22,5 +23,14 @@ class PokeRepository {
         }
 
         return response!!.results
+    }
+
+    suspend fun getPokeInfo(id: Int): PokeInfo?{
+        var response = PokeService().getPokeInfo(id)
+
+        if(response != null){
+            return response
+        }
+        return null
     }
 }
