@@ -8,8 +8,10 @@ import com.example.pokegit.data.model.PokeInfo
 import com.example.pokegit.databinding.ActivityPokeInfoBinding
 import com.example.pokegit.ui.viewmodel.PokeViewModel
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class PokeInfoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPokeInfoBinding

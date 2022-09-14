@@ -12,7 +12,10 @@ import com.example.pokegit.data.model.PokeProvider
 import com.example.pokegit.databinding.ActivityMainBinding
 import com.example.pokegit.ui.recycler.PokeAdapter
 import com.example.pokegit.ui.viewmodel.PokeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val pokeViewModel: PokeViewModel by viewModels()

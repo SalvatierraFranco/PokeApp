@@ -7,13 +7,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.pokegit.data.model.PokeInfo
 import com.example.pokegit.data.model.Pokemon
 import com.example.pokegit.domain.GetPokemonsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class PokeViewModel: ViewModel() {
+@HiltViewModel
+class PokeViewModel @Inject constructor(
+    var getPokemonsUseCase: GetPokemonsUseCase
+) : ViewModel() {
 
     var pokeLiveData = MutableLiveData<List<Pokemon>>()
     var pokeInfoLiveData = MutableLiveData<PokeInfo>()
-    var getPokemonsUseCase = GetPokemonsUseCase()
+    //var getPokemonsUseCase = GetPokemonsUseCase()
 
     fun onCreate(){
         viewModelScope.launch {

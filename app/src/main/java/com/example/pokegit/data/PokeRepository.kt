@@ -4,10 +4,13 @@ import com.example.pokegit.data.model.PokeInfo
 import com.example.pokegit.data.model.PokeProvider
 import com.example.pokegit.data.model.Pokemon
 import com.example.pokegit.data.network.PokeService
+import javax.inject.Inject
 
-class PokeRepository {
+class PokeRepository @Inject constructor(
+    var api: PokeService
+) {
     suspend fun getPokemons(): List<Pokemon>?{
-        var response = PokeService().getPokemons()
+        var response = api.getPokemons()
 
         if(response != null){
             PokeProvider.pokemonList = response.results
@@ -16,7 +19,7 @@ class PokeRepository {
     }
 
     suspend fun getPokeMore(offset: Int, limit: Int): List<Pokemon>?{
-        var response = PokeService().getPokeMore(offset, limit)
+        var response = api.getPokeMore(offset, limit)
 
         if(response != null){
             PokeProvider.pokemonList = response.results
@@ -26,7 +29,7 @@ class PokeRepository {
     }
 
     suspend fun getPokeInfo(id: Int): PokeInfo?{
-        var response = PokeService().getPokeInfo(id)
+        var response = api.getPokeInfo(id)
 
         if(response != null){
             return response
