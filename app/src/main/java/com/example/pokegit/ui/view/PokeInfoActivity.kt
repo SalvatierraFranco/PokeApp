@@ -24,7 +24,47 @@ class PokeInfoActivity : AppCompatActivity() {
 
         PokeInfoViewModel.pokeInfoLiveData.observe(this, androidx.lifecycle.Observer { currentPokemon ->
             setViews(currentPokemon)
+            setColorCardByType(currentPokemon.types[0].type.name)
         })
+    }
+
+    private fun setColorCardByType(type: String) {
+        if(type == "fire")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.fire))
+        else if(type == "grass")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.grass))
+        else if(type == "water")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.water))
+        else if(type == "bug")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.bug))
+        else if(type == "normal")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.normal))
+        else if(type == "ghost")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.ghost))
+        else if (type == "fighting")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.fighting))
+        else if (type == "flying")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.flying))
+        else if (type == "poison")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.poison))
+        else if (type == "ground")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.ground))
+        else if (type == "rock")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.rock))
+        else if (type == "steel")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.steel))
+        else if (type == "electric")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.electric))
+        else if(type == "psychic")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.psychic))
+        else if ( type == "ice")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.ice))
+        else if ( type == "dragon")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.dragon))
+        else if ( type == "dark")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.dark))
+        else if ( type == "fairy")
+            binding.colorBackCard.setCardBackgroundColor(resources.getColor(R.color.fairy))
     }
 
     private fun getBundle() {
