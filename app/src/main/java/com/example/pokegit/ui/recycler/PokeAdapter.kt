@@ -14,7 +14,8 @@ class PokeAdapter(var pokeList: List<Pokemon>): RecyclerView.Adapter<PokeViewHol
 
     override fun onBindViewHolder(holder: PokeViewHolder, position: Int) {
         var foto = pokeList[position].getNum()
-        holder.bind(foto)
+        var nombre = pokeList[position].name
+        holder.bind(foto, nombre)
     }
 
     override fun getItemCount(): Int = pokeList.size

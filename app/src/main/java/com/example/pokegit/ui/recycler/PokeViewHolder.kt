@@ -13,10 +13,12 @@ import com.squareup.picasso.Picasso
 class PokeViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private var binding = ItemPokemonBinding.bind(view)
 
-    fun bind(num: Int){
+    fun bind(num: Int, nombre: String){
         Picasso.get()
             .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png")
             .into(binding.ivPokeItem)
+
+        binding.tvNamePokemon.text = nombre.uppercase()
     }
 
     init {
